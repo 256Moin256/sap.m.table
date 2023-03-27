@@ -1,0 +1,67 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+    controllerName="table.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<Page id="idPage" showHeader="false">
+    <HBox id="idHBox" justifyContent="Center">
+        <items>
+            <Title text="Select any row!" titleStyle="H3"></Title>
+        </items>
+    </HBox>
+    <Table 
+    items="{M1>/table}"
+    backgroundDesign="Solid" 
+    growing="true"
+    growingScrollToLoad="true"
+    growingThreshold="5"
+    id="idTable" 
+    alternateRowColors="true"
+    mode="SingleSelectMaster" 
+    selectionChange="tableRow" >
+        <columns>
+            <Column>
+                <header>
+                    <Label text="Id"></Label>
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Label text="First Name"></Label>
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Label text="Last Name"></Label>
+                </header>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem vAlign="Middle">
+                <cells>
+                    <Text text="{M1>id}"></Text>
+                    <Text text="{M1>first_name}"></Text>
+                    <Text text="{M1>last_name}"></Text>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+
+    <form:SimpleForm id="idSimple" editable="true">
+        <form:title>
+            <core:Title icon="sap-icon://account" text="Simple Form"></core:Title>
+        </form:title>
+        <Label text="Id" labelFor="idId"></Label>
+        <Input id="idId" width="10%" required="false" editable="false" maxLength="30" value="{M1>id}"></Input>
+        <Label text="First Name" labelFor="idFirst"></Label>
+        <Input id="idFirst" width="50%" required="false" editable="false" maxLength="30" value="{M1>first_name}"></Input>
+        <Label text="Last Name" labelFor="idLast"></Label>
+        <Input id="idLast" width="50%" required="false" editable="false" maxLength="30" value="{M1>last_name}"></Input>
+        <Label text="Email" labelFor="idMail"></Label>
+        <Input id="idMail" width="80%" required="false" editable="false" maxLength="30" value="{M1>email}"></Input>
+        <Label text="Gender" labelFor="idGender"></Label>
+        <Input id="idGender" width="30%" required="false" editable="false" maxLength="30" value="{M1>gender}"></Input>
+        <Label text="IP Address" labelFor="idIP"></Label>
+        <Input id="idIP" width="50%" required="false" editable="false" maxLength="30" value="{M1>ip_address}"></Input>
+    </form:SimpleForm>
+</Page>
+</mvc:View>
